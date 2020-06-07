@@ -1,0 +1,99 @@
+1) INTRODUCTION:
+	
+	i) INTAL:
+		* An intal is a non-negative integer of arbitary length.It is a C library function to perform many operations.Some of the data types are signed or unsigned short int,float,double etc.
+	
+	ii) DIFFERENCE:
+		* Limit storage: All integer datatypes have limit to store, whereas intal doesnot have any such limits.
+			
+	iii) APPLICATION:
+		* Mainly used in storing large integrs in column and to maintain commas in between values (i.e, 1,00,000) 
+		* To perform operations like addition,subtraction,multiplication,factorial etc.
+
+2) APPROACH:
+
+	* To store numbers as character arrays in a structure.
+	* Most of the functions have been implemented using brute force techniques.
+	* Some fuctions use other static functions to make implementation easier. 	
+
+-> ADDITION:
+	
+	* Uses brute force method to add two intals which are passed as string to the parameter. The intals are reversed because the addition happens from rightmost bit,this is done by using static reverse function. After the addition the results are again reversed to get the final result.
+
+-> COMPARE:
+
+	* This functions compares the length of the intals and returns the result.Mainly there are 5 cases,
+		a)if the length of both intals are equal and both the intals are same,then it returns 0.
+		b)if the length of both intals are equal and if the
+intal1 is greater than the intal2,then it returns 1.
+		c)if the length of both intals are equal and if the intal2 is greater than the intal1,then it returns -1.
+		d)if the length of the intal1 is greater than intal2,then it returns 1.
+		e)if the length of the intal2 is greater than intal1,then it returns -1.
+
+-> DIFFERENCE:
+
+	* Uses brute force method to subtract. The subtraction takes place from right to left,so the intals are reversed using static reverse function.This function checks the length of the intals i.e, when intal1>intal2 or intal2>intal1 and subtracts appropriately taking carry in count.After the subtraction the results are again reversed to get the final result.
+
+-> MULTIPLICATION:
+
+	* Uses brute force method to multiply. The multiplication takes place from the last digit of the multiplier,so the intals are reversed.Once multiplier is multiplied with multiplicand the value is stored in array.Them the product of the nexxt multiplier digit is calculated and adds to the previous result.After the multiplication,the results are reversed to get the final result.
+
+-> MOD:
+	
+	* The approach is to bring the value of intal2 as close to intal1 then recursively subtract the same and return the required array.Time complexity is O(log intal1).
+
+-> POWER:
+	
+	* This function uses recursive approach,with time complexity O(log n).This function call itself recursively until n/2 is 0 or no more divisible by 2.And returns intal1^intal2.
+
+-> GCD:
+	* The approach is to follow euclid's algorithm.It returns 0,if both the intals are 0. Otherwise is recursively call itself,where the 2nd parameter is mod of two intals.
+
+-> FIBONACCI:
+	
+	* We initially create 2 array with the values 0 and 1 i.e,the first two number of the fibonacci series.In the while loop numbers are added using intal_add function until n becomes 1. Later it returns the required array.
+
+-> FACTORIAL:
+	* Uses dynamic programming approach.It recursively call multiplication function until n becomes 1. And returns the required result. 
+
+-> BINCOEFF:
+	
+	* Uses dynamic programming and pascal's identity approach.We create an array 'a',it iteratively keeps adding the values of a[j] and a[j-1] and stores in a[j]. Later it returns a[k].
+
+-> MAX:
+	
+	* This function uses intal_compare and returns the offset of the maximum intal of the array.
+
+-> MIN:
+	
+	* This function uses intal_compare and returns the offset of the minimum intal of the array.
+
+-> SEARCH:
+	
+	* This functions returns the offset of the first occurrence of the key in an array.Otherwise it returns -1. Time complexity is O(n).
+
+-> BINSEARCH:
+	
+	* The array is sorted and we find the key in 2 halfs of arrays recursively. It returns the offset of the first occurrence of the key in an sorted array.Otherwise it returns -1. Time complexity is O(log n).
+
+-> SORT:
+
+	* Uses Divide and conquer approach and merge sort algorithm to sort the given array. And returns the sorted array. Time complexity is O(n log n.)
+
+-> COIN ROW PROBLEM:
+
+	* Uses dynamic programming and recursion approach.It additionally uses intal_add and max function.And it returns the maximum intal which is optimal solution.
+
+
+3) FUTURE WORK:
+      a)
+	* Implementation of Division function.
+	* Implementation of approximate squareroot function.
+	* Implementation of factorization function.
+	* Implementation of log function.
+      b)If there were no restrictions, we can implement intal.h library to handle integers, which perfors all the mathematical operations.
+
+
+
+
+
